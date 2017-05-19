@@ -1,0 +1,293 @@
+<html lang="nl">
+
+  <head>
+    <title>Great times, Great things</title>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="css/stijlblad.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="icon" type="image/png" href="favicon/favicon.png" size="16x16">
+      <!-- SMOOTH SCROLL -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+
+  <script>
+  $(function() {
+   $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+        }
+      }
+   });
+  });
+  </script>
+  <!-- End of SMOOTH SCROLL -->
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script type="text/javascript" src="fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="fancybox/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="fancybox/jquery-1.10.1.min.js"></script>
+  <script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script type="text/javascript" src="fancybox/jquery.fancybox.js"></script>
+  <script>
+    $(document).ready(function() {
+    $(".fancybox").fancybox({padding : 0,});
+     });
+    openEffect :'elastic' 
+  </script>
+  <script type="text/javascript" src="fancybox/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.1.5"></script>
+  <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css?v=2.1.5" media="screen" />
+  <link rel="stylesheet" href="fancybox/jquery.fancybox.css" media=”screen”>
+  <!-- Add Button helper (this is optional) -->
+  <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox-buttons.css?v=1.0.5" />
+  <script type="text/javascript" src="fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      /*
+       *  Simple image gallery. Uses default settings
+       */
+
+      $('.fancybox').fancybox();
+
+      /*
+       *  Different effects
+       */
+
+      // Change title type, overlay closing speed
+      $(".fancybox-effects-a").fancybox({
+        helpers: {
+          title : {
+            type : 'outside'
+          },
+          overlay : {
+            speedOut : 0
+          }
+        }
+      });
+
+      // Disable opening and closing animations, change title type
+      $(".fancybox-effects-b").fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+
+        helpers : {
+          title : {
+            type : 'over'
+          }
+        }
+      });
+
+      // Set custom style, close if clicked, change title type and overlay color
+      $(".fancybox-effects-c").fancybox({
+        wrapCSS    : 'fancybox-custom',
+        closeClick : true,
+
+        openEffect : 'none',
+
+        helpers : {
+          title : {
+            type : 'inside'
+          },
+          overlay : {
+            css : {
+              'background' : 'rgba(238,238,238,0.85)'
+            }
+          }
+        }
+      });
+
+      // Remove padding, set opening and closing animations, close if clicked and disable overlay
+      $(".fancybox-effects-d").fancybox({
+        padding: 0,
+
+        openEffect : 'elastic',
+        openSpeed  : 150,
+
+        closeEffect : 'elastic',
+        closeSpeed  : 150,
+
+        closeClick : true,
+
+        helpers : {
+          overlay : null
+        }
+      });
+
+      /*
+       *  Button helper. Disable animations, hide close button, change title type and content
+       */
+
+      $('.fancybox-buttons').fancybox({
+        openEffect  : 'none',
+        closeEffect : 'none',
+
+        prevEffect : 'none',
+        nextEffect : 'none',
+
+        closeBtn  : false,
+
+        helpers : {
+          title : {
+            type : 'inside'
+          },
+          buttons : {}
+        },
+
+        afterLoad : function() {
+          this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+        }
+      });
+
+
+      /*
+       *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+       */
+
+      $('.fancybox-thumbs').fancybox({
+        prevEffect : 'none',
+        nextEffect : 'none',
+
+        closeBtn  : false,
+        arrows    : false,
+        nextClick : true,
+
+        helpers : {
+          thumbs : {
+            width  : 50,
+            height : 50
+          }
+        }
+      });
+
+      /*
+       *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+      */
+      $('.fancybox-media')
+        .attr('rel', 'media-gallery')
+        .fancybox({
+          openEffect : 'none',
+          closeEffect : 'none',
+          prevEffect : 'none',
+          nextEffect : 'none',
+
+          arrows : false,
+          helpers : {
+            media : {},
+            buttons : {}
+          }
+        });
+
+      /*
+       *  Open manually
+       */
+
+      $("#fancybox-manual-a").click(function() {
+        $.fancybox.open('1_b.jpg');
+      });
+
+      $("#fancybox-manual-b").click(function() {
+        $.fancybox.open({
+          href : 'iframe.html',
+          type : 'iframe',
+          padding : 5
+        });
+      });
+
+      $("#fancybox-manual-c").click(function() {
+        $.fancybox.open([
+          {
+            href : '1_b.jpg',
+            title : 'My title'
+          }, {
+            href : '2_b.jpg',
+            title : '2nd title'
+          }, {
+            href : '3_b.jpg'
+          }
+        ], {
+          helpers : {
+            thumbs : {
+              width: 75,
+              height: 50
+            }
+          }
+        });
+      });
+
+
+    });
+  </script>
+  </head>
+  <body>
+      <header>
+        <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Sneakers</a></li>
+          <li><a href="contact.html">contact</a></li>
+          <img src="img/logo2.png" alt="Sneakerempire" >
+          <li class="cart"><a href="cart.html">cart</a></li>
+          <img src="img/searchicon.png" alt="searchicon" class="search">
+          <li>NL/FR</li>
+        </ul>
+        </nav>
+      </header>
+      <aside id="text">
+        <h1>Great things, My things</h1>
+        <p>The Tubular sneaker redefined sportswear for the street. And that was just the beginning. Remixing the fashion ingredients of the Tubular into a fresh feminine look, this women's Tubular Defiant shoe stays true to the proportions of the original and gives it a sleek shape. It has a stretch-jersey bootee upper for a snug, sock-like fit.
+        </p>
+        <ul>
+          <li>It has a stretch-jersey bootee upper for a snug, sock-like fit.</li>
+          <li>Allover stretch-jersey upper with elastic strap over forefoot
+          Mono-mesh quarter overlay; Elastane lining</li>
+          <li>Oversize tongue with strap</li>
+          <li>Leather heel piece</li>
+          <li>One-piece EVA midsole and outsole with tyre tube-inspired construction</li>
+        </ul>
+        </aside>
+      <aside id="picture">
+        <div>
+          <a class="fancybox-buttons" data-fancybox-group="button" href="img/tubular.jpg"><img src="img/tubular.jpg" alt="adidas tubular" class="eerste"></a>
+          <div class="side">
+            <a class="fancybox-buttons" data-fancybox-group="button" href="img/tubular1.jpg"><img src="img/tubular1.jpg" alt="adidas tubular" class="oneside"></a>
+            <a class="fancybox-buttons" data-fancybox-group="button" href="img/closeup.png"><img src="img/closeup.png" alt="adidas tubular" class="secondside"></a>
+          </div>
+          <div class="adidas">
+            <h3>ADIDAS</h3> 
+            <p>“Tubular Defiant W”</p>
+            <p>€120</p>
+          </div>
+          <a class="fancybox-buttons" data-fancybox-group="button" href="img/tubular.jpg"><img src="img/adidas-tubular.jpg" alt="adidas-tubular" class="lastone"></a>
+        </div>
+      </aside>
+      <footer>
+        <figure>
+        <img src="img/icon.jpg">
+        <img src="img/icon1.jpg">
+        <img src="img/icon2.jpg">
+        <img src="img/icon3.jpg">
+      </figure>
+      <ul class="left">
+        <li>Klantservice</li>
+        <li>Veelgestelde vragen</li>
+        <li>Betaalmethode</li>
+        <li>Verzenden &amp; retourneren</li>
+        <li>Informatie</li>
+        <li>Terugbezorging</li>
+      </ul>
+      <ul class="right">
+        <li>voorwaarden</li>
+        <li>Algemene Voorwaarden</li>
+        <li>Privacy Policy</li>
+        <li>Disclaimer</li>
+        <li>Sitemap</li>
+      </ul>
+    </footer>
+</body>

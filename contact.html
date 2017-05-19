@@ -1,0 +1,84 @@
+<html lang="nl">
+
+  <head>
+    <title>Great times, Great things</title>
+    <meta charset="utf-8"> 
+    <link rel="stylesheet" type="text/css" href="css/stijlblad.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="icon" type="image/png" href="favicon/favicon.png" size="16x16">
+      <!-- SMOOTH SCROLL -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+
+  <script>
+  $(function() {
+   $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+        }
+      }
+   });
+  });
+  </script>
+  <!-- End of SMOOTH SCROLL -->
+  </head>
+  <body>
+      <header>
+        <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Sneakers</a></li>
+          <li><a href="contact.html">contact</a></li>
+          <img src="img/logo2.png" alt="Sneakerempire" >
+
+          <li class="cartli"><a href="cart.html">cart</a></li>
+          <img src="img/searchicon.png" alt="searchicon" class="search">
+          <li>NL/FR</li>
+        </ul>
+        </nav>
+        <h1>Great things, My things</h1>
+        <h2>Contact</h2>
+      </header>
+      <main id="contactadres">
+        <div class="contact">
+        <p>Sneaker Empire</p>
+        <p>Hilarius Bertolfstraat 97 9050 Gentbrugge </p>
+        <p>BELGIUM</p>
+        <p>Mobiel: +32484412885</p>
+        <p>Telefoon: +329200336</p>
+        <p>Fax: +329220136</p>
+      </div>
+      <div id="kaart">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2508.955146107612!2d3.7445764515107016!3d51.035449152820135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3740286fa51d7%3A0x51635db0349a0d48!2sHilarius+Bertolfstraat+97%2C+9050+Gent!5e0!3m2!1snl!2sbe!4v1454606461300" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      </main>
+          <footer>
+      <figure>
+        <img src="img/icon.jpg">
+        <img src="img/icon1.jpg">
+        <img src="img/icon2.jpg">
+        <img src="img/icon3.jpg">
+      </figure>
+      <ul class="left">
+        <li>Klantservice</li>
+        <li>Veelgestelde vragen</li>
+        <li>Betaalmethode</li>
+        <li>Verzenden &amp; retourneren</li>
+        <li>Informatie</li>
+        <li>Terugbezorging</li>
+      </ul>
+      <ul class="right">
+        <li>voorwaarden</li>
+        <li>Algemene Voorwaarden</li>
+        <li>Privacy Policy</li>
+        <li>Disclaimer</li>
+        <li>Sitemap</li>
+      </ul>
+    </footer>
+  </body>
