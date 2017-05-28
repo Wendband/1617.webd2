@@ -8,6 +8,29 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="icon" type="image/png" href="favicon/favicon.png" size="16x16">
     <link href="https://fonts.googleapis.com/css?family=Abel|Arimo|Open+Sans+Condensed:300" rel="stylesheet">
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <!-- SMOOTH SCROLL -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+  </script>
+
+  <script>
+  $(function() {
+   $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+        }
+      }
+   });
+  });
+  </script>
+  <!-- End of SMOOTH SCROLL -->
+  
   </head>
 <header>
       <nav>
@@ -22,11 +45,11 @@
         </ul>
       </nav>
     </header>
-    <section class="informatie">
+    <section id="informatie">
     <h2><span>Ine Wendy</span> Interior <span>Bureau</span></h2>
       <h3>Informatie</h3>
     <figure>
-      <img src="img/livingroom.jpg" alt="living room">
+      <a href="product.html"><img src="img/livingroom.jpg" alt="living room"></a>
       <img src="img/kitchen.jpg" alt="kitchen">
       <img src="img/bedroom.jpg" alt="slaapkamer">
       <img src="img/bathroom.jpg" alt="badkamer">
@@ -37,10 +60,27 @@
     <section id="team">
     <h3>Ons team</h3>
       <figure>
-        <img src="">
-        <img src="">
-        <img src="">
+        <img src="img/picture1.jpg">
+        <img src="img/pasfoto.jpg" alt="wendy">
+        <img src="img/picture2.jpg">
       </figure>
+      <p>Een team (verwant aan het Nederlandse woord 
+        toom, een groep gezamenlijk werkende dieren) 
+        of ploeg is een (klein) aantal mensen (een groep),
+        dat bij elkaar is gebracht, om één gemeenschappelijk
+        doel te bereiken en het in grote lijnen eens is over
+        de weg naar dit doel. Behalve een gemeenschappelijk
+        doel en een gedeelde visie over de aanpak, dienen de
+        verschillende teamleden elkaar aan te vullen. 
+        Voor het goed functioneren van een team, dienen 
+        er leden in het team te worden opgenomen, 
+        die in meerdere of mindere mate, dezelfde 
+        individuele belangen hebben, kortom: het 
+        teambelang dient te stroken met de verschillende 
+        individuele belangen. Verder dient er sprake te zijn 
+        van een gedeelde verantwoordelijkheid en 
+        aansprakelijkheid. Meredith Belbin heeft hiertoe 
+        een model ontwikkeld met negen teamrollen.</p>
     </section>
     <footer>
       <figure>
